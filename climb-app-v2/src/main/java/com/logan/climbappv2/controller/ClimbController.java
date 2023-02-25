@@ -19,8 +19,18 @@ public class ClimbController {
         return climbRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Climb getById(@PathVariable long id){
+        return climbRepository.findById(id);
+    }
+
+    @GetMapping("/name/{name}")
+    public Climb getByName(@PathVariable String name){
+        return climbRepository.findByName(name);
+    }
+
     @GetMapping("/sent/{isSent}")
-    public List<Climb> getSent(@PathVariable boolean isSent){
+    public List<Climb> getBySent(@PathVariable boolean isSent){
         return climbRepository.findByIsSent(isSent);
     }
 
