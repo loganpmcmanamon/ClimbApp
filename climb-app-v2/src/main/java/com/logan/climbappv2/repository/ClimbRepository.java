@@ -11,4 +11,7 @@ public interface ClimbRepository extends JpaRepository<Climb, Long>{
 
     List<Climb> findAll();
 
+    List<Climb> findByIsSent(boolean isSent);
+
+    List<Climb> findByDiscipline(String discipline);
 }

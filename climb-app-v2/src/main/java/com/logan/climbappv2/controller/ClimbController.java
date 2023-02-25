@@ -19,6 +19,16 @@ public class ClimbController {
         return climbRepository.findAll();
     }
 
+    @GetMapping("/sent/{isSent}")
+    public List<Climb> getSent(@PathVariable boolean isSent){
+        return climbRepository.findByIsSent(isSent);
+    }
+
+    @GetMapping("/discipline/{discipline}")
+    public List<Climb> getClimbByDiscipline(@PathVariable String discipline){
+        return climbRepository.findByDiscipline(discipline);
+    }
+
     @PostMapping
     public Climb createClimb(@RequestBody Climb climb){
         return climbRepository.save(climb);

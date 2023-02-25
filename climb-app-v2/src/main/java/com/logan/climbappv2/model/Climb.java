@@ -17,20 +17,24 @@ public class Climb {
     @NotNull
     private String grade;
     @NotNull
+    private String discipline;
+    @NotNull
     private String location;
     private int attempts;
     private boolean isSent;
     private String notes;
 
-    public Climb(Long id, String name, String grade, String location, int attempts, boolean isSent, String notes) {
+    public Climb(Long id, String name, String grade, String discipline, String location, int attempts, boolean isSent, String notes) {
         this.id = id;
         this.name = name;
         this.grade = grade;
+        this.discipline = discipline;
         this.location = location;
         this.attempts = attempts;
         this.isSent = isSent;
         this.notes = notes;
     }
+
     public Climb(){}; // default constructor
 
     public Long getId() {
@@ -88,6 +92,10 @@ public class Climb {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
+    public String getDiscipline() {return discipline;}
+
+    public void setDiscipline(String discipline) {this.discipline = discipline;}
 
     @Override
     public String toString() {
